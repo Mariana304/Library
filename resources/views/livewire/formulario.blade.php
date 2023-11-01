@@ -13,7 +13,7 @@
             <x-slot name="content">
                 <div class="mb-4">
                     <x-label>
-                        Nombre
+                        Titulo
                     </x-label>
                     <x-input class="w-full" wire:model="bookCreate.title" />
                     <x-input-error for="bookCreate.title" />
@@ -25,6 +25,30 @@
                     <x-textarea class="w-full" wire:model="bookCreate.summary"></x-textarea>
                     <x-input-error for="bookCreate.summary" />
                 </div>
+                <div class="mb-4">
+                    <x-label>
+                        Autor
+                    </x-label>
+                    <x-input class="w-full" wire:model="bookCreate.autor" />
+                    <x-input-error for="bookCreate.autor" />
+                </div>
+
+                <div class="mb-4">
+                    <x-label>
+                        Numero de páginas
+                    </x-label>
+                    <x-input type='number' class="w-full" wire:model="bookCreate.paginas" />
+                    <x-input-error for="bookCreate.paginas" />
+                </div>
+
+                <div class="mb-4">
+                    <x-label>
+                        Precio
+                    </x-label>
+                    <x-input type='number' class="w-full" wire:model="bookCreate.precio" />
+                    <x-input-error for="bookCreate.precio" />
+                </div>
+
                 <div class="mb-4">
                     <x-label>
                         Categoria
@@ -104,18 +128,44 @@
             <x-slot name="content">
                 <div class="mb-4">
                     <x-label>
-                        Nombre
+                        Titulo
                     </x-label>
                     <x-input class="w-full" wire:model="bookEdit.title" />
                     <x-input-error for="bookEdit.title" />
                 </div>
                 <div class="mb-4">
                     <x-label>
-                        Contenido
+                        Reseña
                     </x-label>
                     <x-textarea class="w-full" wire:model="bookEdit.summary"></x-textarea>
                     <x-input-error for="bookEdit.summary" />
                 </div>
+
+                <div class="mb-4">
+                    <x-label>
+                        Autor
+                    </x-label>
+                    <x-input class="w-full" wire:model="bookEdit.autor" />
+                    <x-input-error for="bookEdit.autor" />
+                </div>
+
+                <div class="mb-4">
+                    <x-label>
+                        Número de páginas
+                    </x-label>
+                    <x-input type='number' class="w-full" wire:model="bookEdit.paginas" />
+                    <x-input-error for="bookEdit.paginas" />
+                </div>
+
+
+                <div class="mb-4">
+                    <x-label>
+                        Precio
+                    </x-label>
+                    <x-input type='number' class="w-full" wire:model="bookEdit.precio" />
+                    <x-input-error for="bookEdit.precio" />
+                </div>
+
                 <div class="mb-4">
                     <x-label>
                         Categoria

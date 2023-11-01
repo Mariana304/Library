@@ -20,6 +20,15 @@ class BookEditForm extends Form
     #[Rule('required|array')]
     public $tags = [];
 
+    #[Rule('required')]
+    public $autor;
+
+    #[Rule('required')]
+    public $paginas;
+
+    #[Rule('required')]
+    public $precio;
+
 
     public $bookId = '';
     public $open = false;
@@ -30,10 +39,12 @@ class BookEditForm extends Form
         $this->open = true;
         $this->bookId = $bookId;
         $book = Book::find($bookId);
-
         $this->category_id = $book->category_id;
         $this->title = $book->title;
         $this->summary = $book->summary;
+        $this->autor = $book->author;
+        $this->paginas = $book->pages;
+        $this->precio = $book->price;
         $this->tags = $book->tags->pluck('id')->toArray();
     }
 

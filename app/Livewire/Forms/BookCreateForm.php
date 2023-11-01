@@ -21,17 +21,30 @@ class BookCreateForm extends Form
     public $tags = [];
 
 
+    #[Rule('required')]
+    public $autor;
+
+    #[Rule('required')]
+    public $paginas;
+
+    #[Rule('required')]
+    public $precio;
+
+
+
     public function save(){
         $this->validate();
         $user = auth()->user();
         $book = new Book;
         $book->title = $this->title;
         $book->summary = $this->summary;
+        $book->author = $this->autor;
+        $book->pages = $this->paginas;
+        $book->price = $this->precio;
         $book->category_id = $this->category_id;
         $book->user_id = $user->id; // Asigna la variable $miVariable al campo user_id
         $book->save();
         $book->tags()->attach($this->tags);
-
         $this->reset();
     }
 }
