@@ -8,9 +8,11 @@ use App\Models\Book;
 use App\Models\Category;
 use App\Models\Tag;
 use Livewire\Component;
+use Livewire\Features\SupportFileUploads\WithFileUploads;
 
 class Formulario extends Component
 {
+    use WithFileUploads;
 
     public $categories, $tags;
 

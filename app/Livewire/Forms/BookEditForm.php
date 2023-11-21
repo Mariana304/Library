@@ -4,10 +4,17 @@ namespace App\Livewire\Forms;
 
 use App\Models\Book;
 use Livewire\Attributes\Rule;
+use Livewire\Features\SupportFileUploads\WithFileUploads;
 use Livewire\Form;
 
 class BookEditForm extends Form
 {
+    use WithFileUploads;
+
+    #[Rule('required')]
+    public $path_cover;
+
+
     #[Rule('required')]
     public $title;
 
@@ -45,6 +52,7 @@ class BookEditForm extends Form
         $this->autor = $book->author;
         $this->paginas = $book->pages;
         $this->precio = $book->price;
+        $this->path_cover = $book->path_cover;
         $this->tags = $book->tags->pluck('id')->toArray();
     }
 

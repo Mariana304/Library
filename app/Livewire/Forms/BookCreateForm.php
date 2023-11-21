@@ -4,10 +4,16 @@ namespace App\Livewire\Forms;
 
 use App\Models\Book;
 use Livewire\Attributes\Rule;
+use Livewire\Features\SupportFileUploads\WithFileUploads;
 use Livewire\Form;
 
 class BookCreateForm extends Form
 {
+    use WithFileUploads;
+
+    #[Rule('required')]
+    public $path_cover;
+
     #[Rule('required')]
     public $title;
 
@@ -43,6 +49,7 @@ class BookCreateForm extends Form
         $book->price = $this->precio;
         $book->category_id = $this->category_id;
         $book->user_id = $user->id; // Asigna la variable $miVariable al campo user_id
+        $book->path_cover = $this->path_cover->store('images');
         $book->save();
         $book->tags()->attach($this->tags);
         $this->reset();
