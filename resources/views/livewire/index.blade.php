@@ -1,38 +1,43 @@
-<div>
-    <div class=" bg-gray-800 h-auto  justify-items-center  py-4 ">
-        <header>
+<div class="relative">
 
-            <div class="mx-[500px] mt-2">
-                <x-input class="w-full px-2 h-7 rounded border border-[#acaaaa] outline-none  focus:ring-white" placeholder="buscar"
-                    wire:model.live="search" type="search" />
-            </div>
-            <nav>
-                <div class="container h-auto grid md:grid-cols-6  w-auto  p-4 mx-auto mt-3 ">
-                    @if (Route::has('login'))
-                        <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right ">
-                            @auth
-                                <a href="{{ url('/dashboard') }}"
-                                    class="font-semibold text-gray-400 hover:text-gray-500 focus:outline focus:outline-2 rounded-lg px-3 py-2 border border-lime-600 focus:rounded-sm focus:outline-gray-600">Dashboard</a>
-                            @else
-                                <a href="{{ route('login') }}"
-                                    class="font-semibold text-gray-400 hover:text-gray-500 focus:outline focus:outline-2 rounded-lg px-3 py-2 border border-lime-600 focus:rounded-sm focus:outline-gray-600">Soy
-                                    vendedor</a>
+    
+        <div class="  bg-gray-800 h-auto justify-items-center   py-4 ">
+            <header>
 
-                                @if (Route::has('register'))
-                                    <a href="{{ route('register') }}"
-                                        class="ml-4 font-semibold text-gray-400 hover:text-gray-500 rounded-lg focus:outline px-3 py-2 border border-amber-500 focus:outline-2 focus:rounded-sm focus:outline-gray-600">Quiero
-                                        ser vendedor</a>
-                                @endif
-                            @endauth
-                        </div>
-                    @endif
+                <div class="mx-[500px] mt-2">
+                    <x-input class="w-full px-2 h-7 rounded border border-[#acaaaa] outline-none  focus:ring-white"
+                        placeholder="buscar" wire:model.live="search" type="search" />
                 </div>
-            </nav>
-        </header>
-    </div>
-    <header id="header" class="header bg-fixed h-72 sm:h-1/2 mb-24 bg-[url('public\storage\images\bg-library.avif')]">
-        <p class=" sm:p-40 brightness-none text-[#623307] text-3xl sm:text-7xl italic font-bold text-center">Biblioteca</p>
-        
+                <nav>
+                    <div class="container h-auto grid md:grid-cols-6  w-auto  p-4 mx-auto mt-3 ">
+                        @if (Route::has('login'))
+                            <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right ">
+                                @auth
+                                    <a href="{{ url('/dashboard') }}"
+                                        class="font-semibold text-gray-400 hover:text-gray-500 focus:outline focus:outline-2 rounded-lg px-3 py-2 border border-lime-600 focus:rounded-sm focus:outline-gray-600">Dashboard</a>
+                                @else
+                                    <a href="{{ route('login') }}"
+                                        class="font-semibold text-gray-400 hover:text-gray-500 focus:outline focus:outline-2 rounded-lg px-3 py-2 border border-lime-600 focus:rounded-sm focus:outline-gray-600">Soy
+                                        vendedor</a>
+
+                                    @if (Route::has('register'))
+                                        <a href="{{ route('register') }}"
+                                            class="ml-4 font-semibold text-gray-400 hover:text-gray-500 rounded-lg focus:outline px-3 py-2 border border-amber-500 focus:outline-2 focus:rounded-sm focus:outline-gray-600">Quiero
+                                            ser vendedor</a>
+                                    @endif
+                                @endauth
+                            </div>
+                        @endif
+                    </div>
+                </nav>
+            </header>
+        </div>
+    
+    <header id="header"
+        class="header bg-fixed h-72 sm:h-1/2 mb-24 bg-[url('public\storage\images\bg-library.avif')]">
+        <p class=" sm:p-40 brightness-none text-[#623307] text-3xl sm:text-7xl italic font-bold text-center">Biblioteca
+        </p>
+
     </header>
 
     <div class="container mx-auto mt-5 text-center rounded-lg  ">
@@ -49,7 +54,7 @@
 
         <div class=" grid lg:grid-cols-2  mb-16   2xl:grid-cols-3  bg-orange-50  mt-4 sm:px-1 sm:py-1  rounded-lg ">
             @foreach ($books as $book)
-                <div  wire:click="$set('open', true)"
+                <div wire:click="$set('open', true)"
                     class="flex flex-col overflow-hidden shadow-lg text-overflow rounded-lg bg-white w-4/5 h-80 sm:h-80 md:h-60 mx-auto mb-12 mt-8 md:max-w-lg md:flex-row ">
                     <img class="h-48 w-full rounded-t-lg object-cover sm:h-48  md:w-48 md:h-auto md:rounded-none md:rounded-l-lg"
                         src="/storage/{{ $book->path_cover }}">
@@ -63,9 +68,9 @@
                         <p>
                             {{ $book->author }}
                         </p>
-                        
-                            {{ $book->user_id }}
-                    
+
+                        {{ $book->user_id }}
+
                     </div>
                 </div>
             @endforeach
@@ -83,7 +88,8 @@
                             Titulo
                         </x-label>
 
-                        <div class=" grid lg:grid-cols-2  mb-16   2xl:grid-cols-3  bg-orange-50  mt-4 sm:px-1 sm:py-1  rounded-lg ">
+                        <div
+                            class=" grid lg:grid-cols-2  mb-16   2xl:grid-cols-3  bg-orange-50  mt-4 sm:px-1 sm:py-1  rounded-lg ">
                             @foreach ($books as $book)
                                 <div
                                     class="flex flex-col overflow-hidden shadow-lg text-overflow rounded-lg bg-white w-4/5 h-80 sm:h-80 md:h-60 mx-auto mb-12 mt-8 md:max-w-lg md:flex-row ">
@@ -93,7 +99,7 @@
                                         <h5 class="mb-2 text-sm sm:text-lg font-medium text-neutral-800">
                                             {{ $book->title }}
                                         </h5>
-                                        
+
 
                                         <div class="mb-4">
                                             <x-label>
@@ -106,16 +112,16 @@
                                         <p>
                                             {{ $book->author }}
                                         </p>
-                                        
-                                            {{ $book->user_id }}
-                                    
+
+                                        {{ $book->user_id }}
+
                                     </div>
                                 </div>
                             @endforeach
                         </div>
-                        
+
                     </div>
-                    
+
                 </x-slot>
                 <x-slot name="footer">
                     <div class="flex justify-end mt-2">

@@ -64,6 +64,7 @@ class ContentComponent extends Component
         ->orWhere('author', 'like', '%' . $this->search . '%')
         ->orderBy('id', 'desc')
         ->paginate($this->paginacion);
+       
 
         return view('livewire.content-component', compact('books'));
     }

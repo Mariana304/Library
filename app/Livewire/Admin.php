@@ -12,6 +12,8 @@ class Admin extends Component
     public $users;
     public $userId = '';
     public $open = false;
+
+
     #[Rule('required')]
     public $name;
 
@@ -43,6 +45,7 @@ class Admin extends Component
         $user = User::find($this->userId);
         $user->update($this->only('name', 'email'));
         $this->reset(['userId', 'open']);
+
 
     }
 
