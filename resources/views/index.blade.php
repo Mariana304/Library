@@ -162,7 +162,7 @@
             font-size: 46px;
             margin: -20px 0 20px;
             font-weight: 800;
-            letter-spacing: 0.8rem;
+            letter-spacing: 0.1rem;
         }
 
         .hero p {
@@ -179,8 +179,7 @@
 
         .content p {
             color: #555;
-            line-height: 30px;
-            letter-spacing: 1.2px;
+            
             margin-bottom: 10px;
         }
 

@@ -77,10 +77,10 @@
                             <img class="h-48 w-full rounded-t-lg object-cover sm:h-48  md:w-48 md:h-auto md:rounded-none md:rounded-l-lg"
                                 src="/storage/{{ $book->path_cover }}">
                             <div class="flex flex-col sm:h-80 justify-start p-4">
-                                <h5 class="mb-3 text-sm sm:text-lg font-medium text-neutral-800">
+                                <h5 class="mb-3 text-lg font-medium text-neutral-800">
                                     {{ $book->title }}
                                 </h5>
-                                <p class="mb-5">
+                                <p class="mb-5 text-base ">
                                     {{ Str::limit($book->summary, 50) }}
                                 </p>
                                 <p class="italic font-semibold">
